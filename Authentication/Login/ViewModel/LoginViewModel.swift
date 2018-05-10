@@ -75,7 +75,7 @@ public final class LoginViewModel<User, SessionService: SessionServiceType> : Lo
     
     public var togglePasswordVisibility: CocoaAction<UIButton> { return CocoaAction(_togglePasswordVisibility) }
     
-    fileprivate lazy var _logIn: Action<(), User, SessionServiceError> = self.initializeLogInAction()
+    fileprivate lazy var _logIn: ReactiveSwift.Action<(), User, SessionServiceError> = self.initializeLogInAction()
     fileprivate let _logInProvidersUserSignal: Signal<LoginProviderUserType, NoError>
     fileprivate let _logInProvidersErrorSignal: Signal<LoginProviderErrorType, NoError>
     fileprivate lazy var _logInProvidersFinalUserSignal: Signal<Result<User, SessionServiceError>, NoError> = self.initializeLogInUserSignal()
@@ -89,7 +89,7 @@ public final class LoginViewModel<User, SessionService: SessionServiceType> : Lo
     
     fileprivate var _ignoreProviders: Bool = true
     
-    private lazy var _togglePasswordVisibility: Action<(), Bool, NoError> = self.initializeTogglePasswordVisibilityAction()
+    private lazy var _togglePasswordVisibility: ReactiveSwift.Action<(), Bool, NoError> = self.initializeTogglePasswordVisibilityAction()
     
     /**
         Initializes a login view model which will communicate to the session service provided and
@@ -187,7 +187,7 @@ fileprivate extension LoginViewModel {
         return Signal.merge([_logIn.isExecuting.signal, _loginProvidersExecutingSignal])
     }
     
-    fileprivate func initializeLogInAction() -> Action<(), User, SessionServiceError> {
+    fileprivate func initializeLogInAction() -> ReactiveSwift.Action<(), User, SessionServiceError> {
         return Action(enabledIf: self._credentialsAreValid) { [unowned self] _ in
             if let email = Email(raw: self.email.value) {
                 let password = self.password.value
@@ -198,7 +198,7 @@ fileprivate extension LoginViewModel {
         }
     }
     
-    fileprivate func initializeTogglePasswordVisibilityAction() -> Action<(), Bool, NoError> {
+    fileprivate func initializeTogglePasswordVisibilityAction() -> ReactiveSwift.Action<(), Bool, NoError> {
         return Action { [unowned self] _ in
             self.passwordVisible.value = !self.passwordVisible.value
             return SignalProducer(value: self.passwordVisible.value).observe(on: UIScheduler())
