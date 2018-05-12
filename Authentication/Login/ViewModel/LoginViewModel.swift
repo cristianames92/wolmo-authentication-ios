@@ -102,7 +102,7 @@ public final class LoginViewModel<User, SessionService: SessionServiceType> : Lo
     */
     internal init(sessionService: SessionService,
                   credentialsValidator: LoginCredentialsValidator = LoginCredentialsValidator(),
-                  providerSignals: [(Signal<LoginProviderUserType, NoError>, Signal<LoginProviderErrorType, NoError>)] = []) { //swiftlint:disable:this large_tuple
+                  providerSignals: [(Signal<LoginProviderUserType, NoError>, Signal<LoginProviderErrorType, NoError>)] = []) {
         _sessionService = sessionService
         
         let emailValidationResult = email.signal.map(credentialsValidator.emailValidator.validate)

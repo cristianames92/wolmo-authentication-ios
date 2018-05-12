@@ -132,7 +132,7 @@ public final class SignupViewModel<User, SessionService: SessionServiceType>: Si
                   credentialsValidator: SignupCredentialsValidator = SignupCredentialsValidator(),
                   usernameEnabled: Bool = true,
                   passwordConfirmationEnabled: Bool = true,
-                  providerSignals: [(Signal<LoginProviderUserType, NoError>, Signal<LoginProviderErrorType, NoError>)] = []) { //swiftlint:disable:this large_tuple
+                  providerSignals: [(Signal<LoginProviderUserType, NoError>, Signal<LoginProviderErrorType, NoError>)] = []) {
         _sessionService = sessionService
         
         let usernameValidationResult = username.signal.map(credentialsValidator.usernameValidator.validate)

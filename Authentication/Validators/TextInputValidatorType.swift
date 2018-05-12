@@ -27,7 +27,8 @@ public enum ValidationResult {
     public var errors: [String] {
         switch self {
         case .valid: return []
-        case .invalid(let _errors): return _errors
+            // swiflint:disable indetifier_name
+        case .invalid(let innerErrors): return innerErrors
         }
     }
     
