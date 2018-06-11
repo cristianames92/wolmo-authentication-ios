@@ -16,6 +16,7 @@ public protocol LoginViewConfigurationType {
     var colorPalette: ColorPaletteType { get }
     var fontPalette: FontPaletteType { get }
     var buttonConfiguration: ButtonConfigurationType { get }
+    var recoverPasswordConfiguration: RecoverPasswordConfigurationType { get }
     
 }
 
@@ -32,15 +33,18 @@ public struct LoginViewConfiguration: LoginViewConfigurationType {
     public let colorPalette: ColorPaletteType
     public let fontPalette: FontPaletteType
     public let buttonConfiguration: ButtonConfigurationType
+    public let recoverPasswordConfiguration: RecoverPasswordConfigurationType
     
     public init(logoImage: UIImage? = .none,
                 colorPalette: ColorPaletteType = DefaultColorPalette(),
                 fontPalette: FontPaletteType = DefaultFontPalette(),
-                buttonConfiguration: ButtonConfigurationType = DefaultButtonConfiguration()) {
+                buttonConfiguration: ButtonConfigurationType = DefaultButtonConfiguration(),
+                recoverPasswordConfiguration: RecoverPasswordConfigurationType = DefaultRecoverPasswordConfiguration()) {
         self.logoImage = logoImage
         self.colorPalette = colorPalette
         self.fontPalette = fontPalette
         self.buttonConfiguration = buttonConfiguration
+        self.recoverPasswordConfiguration = recoverPasswordConfiguration
     }
     
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		464F2CC820CEE70B00F9E020 /* RecoverPasswordConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F2CC720CEE70B00F9E020 /* RecoverPasswordConfiguration.swift */; };
 		466043E31F2FC6AA00E56AC4 /* ButtonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466043E21F2FC6AA00E56AC4 /* ButtonConfiguration.swift */; };
 		9D1DFF021C8DCFB300F0A37C /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1DFF001C8DCFB300F0A37C /* Nimble.framework */; };
 		9D1DFF031C8DCFB300F0A37C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1DFF011C8DCFB300F0A37C /* Quick.framework */; };
@@ -168,6 +169,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		464F2CC720CEE70B00F9E020 /* RecoverPasswordConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordConfiguration.swift; sourceTree = "<group>"; };
 		466043E21F2FC6AA00E56AC4 /* ButtonConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfiguration.swift; sourceTree = "<group>"; };
 		9D1DFEF71C8DCE0A00F0A37C /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		9D1DFEF81C8DCE0A00F0A37C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -553,6 +555,7 @@
 				CE111E0D1D4FA8980083C99E /* ColorPalette.swift */,
 				CE111E0E1D4FA8980083C99E /* FontPalette.swift */,
 				466043E21F2FC6AA00E56AC4 /* ButtonConfiguration.swift */,
+				464F2CC720CEE70B00F9E020 /* RecoverPasswordConfiguration.swift */,
 			);
 			path = ViewConfiguration;
 			sourceTree = "<group>";
@@ -804,6 +807,7 @@
 			files = (
 				CE111E021D4FA80E0083C99E /* TermsAndServicesController.swift in Sources */,
 				CE20AD691D53BB8C0039260B /* AuthenticationCoordinator.swift in Sources */,
+				464F2CC820CEE70B00F9E020 /* RecoverPasswordConfiguration.swift in Sources */,
 				CE42AE8E1E4E4B0700B4C377 /* SignupControllerConfiguration.swift in Sources */,
 				CE48286C1EC5FCE9008BE751 /* SignupView+LocalizedTexts.swift in Sources */,
 				CE111DC21D4FA70D0083C99E /* TextInputValidatorType.swift in Sources */,

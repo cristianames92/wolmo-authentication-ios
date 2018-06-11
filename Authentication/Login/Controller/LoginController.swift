@@ -155,7 +155,7 @@ fileprivate extension LoginController {
             self._transitionDelegate.toSignup(from: self)
         }
         loginView.recoverPasswordButton.reactive.controlEvents(.touchUpInside).observeValues { [unowned self] _ in
-            self._transitionDelegate.toRecoverPassword(from: self)
+            self.loginView.delegate.recoverPasswordConfiguration.onTap(self.navigationController)
         }
     }
     

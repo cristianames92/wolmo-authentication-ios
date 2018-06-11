@@ -15,9 +15,11 @@ import Core
      the framework.
  */
 public protocol LoginViewType: Renderable, LoginFormType {
-    
+
+    var delegate: LoginViewDelegate { get }
+
     var logoImageView: UIImageView { get }
-    
+        
     /* Navigation elements to other screens */
     var signupLabel: UILabel? { get }
     var signupButton: UIButton { get }
@@ -125,7 +127,6 @@ internal final class LoginView: UIView, LoginViewType, NibLoadable {
     @IBOutlet weak var recoverPasswordButtonOutlet: UIButton! {
         didSet {
             recoverPasswordButtonOutlet.setUnderlined(title: recoverPasswordButtonTitle)
-            recoverPasswordButtonOutlet.isHidden = true
         }
     }
 
@@ -188,8 +189,8 @@ internal final class LoginView: UIView, LoginViewType, NibLoadable {
         logInButtonPressed = false
         passwordVisible = false
         
-        //Configure colour palette
-        //Configure fonts
+        // Configure colour palette
+        // Configure fonts
         delegate.configureLoginView(self)
         
         configureUI()

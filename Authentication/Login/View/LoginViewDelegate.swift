@@ -15,8 +15,10 @@ public protocol LoginViewDelegate { //swiftlint:disable:this class_delegate_prot
     /** Palettes used to configure all login view elements possible. */
     var colorPalette: ColorPaletteType { get }
     var fontPalette: FontPaletteType { get }
-    
-    /**
+    var buttonConfiguration: ButtonConfigurationType { get }
+    var recoverPasswordConfiguration: RecoverPasswordConfigurationType { get }
+
+    /**var delegate: LoginViewDelegate 
         Function to configure all view elements according to the palettes.
         It is called by the default login view when rendered.
      
@@ -46,7 +48,10 @@ public final class DefaultLoginViewDelegate: LoginViewDelegate {
     public var colorPalette: ColorPaletteType { return _configuration.colorPalette }
     public var fontPalette: FontPaletteType { return _configuration.fontPalette }
     public var buttonConfiguration: ButtonConfigurationType { return _configuration.buttonConfiguration }
-    
+    public var recoverPasswordConfiguration: RecoverPasswordConfigurationType {
+        return _configuration.recoverPasswordConfiguration
+    }
+
     internal init(configuration: LoginViewConfigurationType = LoginViewConfiguration()) {
         _configuration = configuration
     }
@@ -63,11 +68,20 @@ public final class DefaultLoginViewDelegate: LoginViewDelegate {
         configurePasswordElements(in: loginView)
         configureLinksElements(in: loginView)
         configureErrorElements(in: loginView)
+        configureRecoverPassword(in: loginView)
     }
 
 }
 
 fileprivate extension DefaultLoginViewDelegate {
+
+    fileprivate func configureRecoverPassword(in loginView: LoginViewType) {
+        loginView.recoverPasswordLabel?.isHidden = recoverPasswordConfiguration.isHidden
+        loginView.recoverPasswordButton.contentHorizontalAlignment =
+            recoverPasswordConfiguration.contentHorizontalAlignment
+        loginView.recoverPasswordButton.titleLabel?.textColor = recoverPasswordConfiguration.textColor
+        loginView.recoverPasswordButton.titleLabel?.font = recoverPasswordConfiguration.font
+    }
 
     fileprivate func configureMainButton(in loginView: LoginViewType) {
         loginView.logInButton.backgroundColor = colorPalette.mainButtonDisabled
