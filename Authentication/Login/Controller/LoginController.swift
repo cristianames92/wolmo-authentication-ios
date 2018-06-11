@@ -70,7 +70,9 @@ public final class LoginController: UIViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
+        UIView.animate(withDuration: 0.5) {
+            self.navigationController?.isNavigationBarHidden = true
+        }
     }
     
     public override func viewDidAppear(_ animated: Bool) {
