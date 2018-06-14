@@ -19,7 +19,7 @@ public protocol RecoverPasswordConfigurationType {
     var isHidden: Bool { get }
     var font: UIFont { get }
     var textColor: UIColor { get } 
-    var onTap: (UINavigationController?) -> Void { get }
+    var onTap: () -> UIViewController { get }
 
 }
 
@@ -29,7 +29,7 @@ public extension RecoverPasswordConfigurationType {
     var isHidden: Bool { return true }
     var font: UIFont { return UIFont.systemFont(ofSize: 14, weight: .medium) }
     var textColor: UIColor { return .black }
-    var onTap: (UINavigationController?) -> Void { return { _ in () } }
+    var onTap: () -> UIViewController { return { UIViewController() } }
 
 }
 

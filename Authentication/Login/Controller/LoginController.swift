@@ -157,7 +157,11 @@ fileprivate extension LoginController {
             self._transitionDelegate.toSignup(from: self)
         }
         loginView.recoverPasswordButton.reactive.controlEvents(.touchUpInside).observeValues { [unowned self] _ in
-            self.loginView.delegate.recoverPasswordConfiguration.onTap(self.navigationController)
+            let viewControllerToPresent = self.loginView.delegate.recoverPasswordConfiguration.onTap()
+            UIView.animate(withDuration: 0.5) {
+                self.navigationController?.isNavigationBarHidden = false
+            }
+            self.navigationController?.pushViewController(viewControllerToPresent, animated: true)
         }
     }
     
