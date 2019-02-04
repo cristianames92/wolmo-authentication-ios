@@ -17,6 +17,7 @@ test-reports/
 *.xccheckout
 *.xcconfig
 *.xcscmblueprint
+Frameworks/
 
 # osx noise
 .DS_Store
