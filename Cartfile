@@ -1,6 +1,6 @@
 # Core & Functional Programming
-#github "cristianames92/wolmo-core-ios" "master"
-#git "/Users/cristianerikamesmasek/GroupProjects/wolox/facebook-swift-sdk" "master"
-#github "facebook/facebook-ios-sdk" ~> 4.40.0
-github "facebook/facebook-objc-sdk" ~> 4.38.0
-github "facebook/facebook-sdk-swift" ~> 0.5.0
+github "cristianames92/wolmo-core-ios" "master"
+github "facebook/facebook-ios-sdk" ~> 4.40.0
+github "ReactiveCocoa/ReactiveCocoa" ~> 8.0.2
+#github "facebook/facebook-objc-sdk" ~> 4.38.0
+#github "facebook/facebook-sdk-swift" ~> 0.5.0
