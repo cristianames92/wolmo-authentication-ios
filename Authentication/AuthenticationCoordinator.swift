@@ -6,7 +6,7 @@
 //  Copyright © 2016 Wolox. All rights reserved.
 //
 
-import Core
+import WolmoCore
 
 /*
     Enumeration representing an authentication screen

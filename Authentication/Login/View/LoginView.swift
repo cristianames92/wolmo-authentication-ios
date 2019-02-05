@@ -6,7 +6,7 @@
 //  Copyright © 2016 Wolox. All rights reserved.
 //
 
-import Core
+import WolmoCore
 
 /**
      Represents the minimum required
